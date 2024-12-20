@@ -1,5 +1,7 @@
+import { CommentCardList } from './components/CommentCardList';
+
 function App() {
-   return <div>Olá, mundo!</div>;
+   return <CommentCardList />;
 }
 
 export default App;
