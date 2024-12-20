@@ -40,27 +40,29 @@ export function CommentCardList() {
             ))}
          </div>
 
-         {hasNextPage ? (
-            <button
-               onClick={fetchNextPage as React.MouseEventHandler<HTMLButtonElement>}
-               className='flex items-center gap-2 hover:underline'
-            >
-               <Plus size={16} />
-               Carregar mais
-            </button>
-         ) : (
-            <div className='flex flex-col items-center justify-center gap-2 text-center mt-5'>
-               <p>Todos os comentários foram carregados.</p>
-               <p>
-                  <button
-                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                     className='flex items-center gap-2 hover:underline'
-                  >
-                     Voltar para o topo <ArrowElbowRightUp size={16} />
-                  </button>
-               </p>
-            </div>
-         )}
+         <div className='flex flex-col items-center justify-center gap-2 text-center mt-5'>
+            {hasNextPage ? (
+               <button
+                  onClick={fetchNextPage as React.MouseEventHandler<HTMLButtonElement>}
+                  className='flex items-center justify-center gap-2 w-full bg-zinc-900 hover:opacity-80 focus:outline-none p-4 rounded-lg'
+               >
+                  <Plus size={16} />
+                  Carregar mais
+               </button>
+            ) : (
+               <>
+                  <p>Todos os comentários foram carregados.</p>
+                  <p>
+                     <button
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        className='flex items-center gap-2 hover:underline focus:outline-none'
+                     >
+                        Voltar para o topo <ArrowElbowRightUp size={16} />
+                     </button>
+                  </p>
+               </>
+            )}
+         </div>
       </>
    );
 }
