@@ -1,7 +1,7 @@
-import { CommentCardList } from './components/CommentCardList';
+import { Comments } from './pages/Comments';
 
 function App() {
-   return <CommentCardList />;
+   return <Comments />;
 }
 
 export default App;
